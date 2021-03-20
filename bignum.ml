@@ -187,9 +187,9 @@ let to_string (b : bignum) : string =
   Arithmetic functions
  *)
 
-(* plus_pos b1 b2 -- Returns a bignum representing the sum of `b1` and
-   `b2`. NB: Assumes that (and works only when) the sum is positive. *)
-let plus_pos (b1 : bignum) (b2 : bignum) : bignum =
+(* plus_nonneg b1 b2 -- Returns a bignum representing the sum of `b1` and
+   `b2`. NB: Assumes that (and works only when) the sum is nonnegative. *)
+let plus_nonneg (b1 : bignum) (b2 : bignum) : bignum =
 
   let pair_from_carry (carry : int) : bool * int list =
     match carry with
@@ -235,10 +235,10 @@ let plus_pos (b1 : bignum) (b2 : bignum) : bignum =
 Problem 4
 
 The `plus` function returns a bignum representing b1 + b2. However, it
-does NOT make the same assumption as `plus_pos` (that the sum is
-positive).
+does NOT make the same assumption as `plus_nonneg` (that the sum is
+nonnegative).
 
-Hint: How can you use `plus_pos` to implement `plus`? Make sure that
+Hint: How can you use `plus_nonneg` to implement `plus`? Make sure that
 your implementation preserves the bignum invariant.
 ......................................................................*)
 
